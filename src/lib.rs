@@ -5,6 +5,7 @@ pub use std::sync::{Once, ONCE_INIT};
 macro_rules! ifunky {
     ($(pub fn $fun:ident($($arg:ident: $kind:ty),*) -> $ret:ty { $($selector:expr);* })*) => (
         $(
+            #[inline(always)]
             pub fn $fun($($arg: $kind),*) -> $ret {
                 static SYNCHRO_START: $crate::Once = $crate::ONCE_INIT;
                 static mut INDIRECT: fn( $($kind),* ) -> $ret = dispatch;
