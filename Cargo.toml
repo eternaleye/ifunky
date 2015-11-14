@@ -1,0 +1,10 @@
+[package]
+name = "ifunky"
+description = "Provides functions that choose a variant (and memoize that choice) on first call, like ifuncs without the need for loader support"
+version = "0.1.0"
+authors = ["Alex Elsayed <eternaleye@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/eternaleye/ifunky"
+
+[dev-dependencies]
+rand = "0.3"
